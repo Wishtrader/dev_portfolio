@@ -1,6 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
 import { Inter } from 'next/font/google'
+
+const sGrotesk = localFont({
+  src: './font/SpaceGrotesk-VariableFont_wght.ttf',
+  display: 'swap',
+})
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={sGrotesk.className}>{children}</body>
     </html>
   )
 }
